@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
-import api from "../../api/goods.api/goods";
+import api from "../../api/products.api/products";
 import Preloader from "../preloader/preloader";
-import GoodCard from "../goodsPage/goodsCard";
+import ProductCard from "./productCard";
 
-const GoodsList = () => {
+const ProductsList = () => {
   const [loading, setLoading] = useState(true);
-  const [goods, setGoods] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
+    console.log("useEffect11")
     setTimeout(() => {
       setLoading(true);
-      setGoods(api);
+      setProducts(api);
       setLoading(false);
     }, 2000);
+    console.log("useEffect22")
+
   }, []);
   // console.log("goods", goods);
 
@@ -20,13 +23,13 @@ const GoodsList = () => {
 
   return (
     <div className="row">
-      {goods.map((good) => (
-        <div key={good.id} className="col-md-4">
-          <GoodCard good={good} />
+      {products.map((product) => (
+        <div key={product.id} className="col-md-4">
+          <ProductCard product={product} />
         </div>
       ))}
     </div>
   );
 };
 
-export default GoodsList;
+export default ProductsList;

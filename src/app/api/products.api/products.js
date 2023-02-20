@@ -1,4 +1,4 @@
-const goods = [
+const products = [
   {
     id: 1,
     name: "Product 1",
@@ -105,7 +105,7 @@ const goods = [
 // const fetchAll = () =>
 //   new Promise((resolve) => {
 //     window.setTimeout(function () {
-//       resolve(goods);
+//       resolve(products);
 //     }, 2000);
 //   });
 
@@ -115,7 +115,7 @@ const goods = [
 //       resolve(goods.find((good) => good.id === id));
 //     }, 1000);
 //   });
-export default goods
+export default products
 
 // const goods = [
 //   { id: 1, name: "Product 1", price: 10 },
