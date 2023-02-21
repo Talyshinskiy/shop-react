@@ -2,7 +2,8 @@ const products = [
   {
     id: 1,
     name: "Product 1",
-    description: "This is the first product",
+    description:
+      "Descriptive words help paint a picture in the reader's mind. They can be adjectives, adverbs, or participles that describe the subjects or actions of your This is the first prodmfklwmflkw klmrwfkmlrkfmlkrem  kmel kmlml  lekmlu,.fe wlrf rvct",
     fromCountry: "USA",
     typeSort: "Type A",
     category: "Category 1",
@@ -102,6 +103,53 @@ const products = [
   },
 ];
 
+if (!localStorage.getItem("products")) {
+  localStorage.setItem("products", JSON.stringify(products));
+}
+
+const fetchAll = () =>
+  new Promise((resolve) => {
+    window.setTimeout(function () {
+      resolve(JSON.parse(localStorage.getItem("products")));
+    }, 2000);
+  });
+
+const update = (id, data) =>
+  new Promise((resolve) => {
+    const products = JSON.parse(localStorage.getItem("products"));
+    const productIndex = products.findIndex((u) => u.id === id);
+    products[productIndex] = { ...products[productIndex], ...data };
+    localStorage.setItem("products", JSON.stringify(products));
+    resolve(products[productIndex]);
+  });
+
+  const getById = (id) =>
+  new Promise((resolve) => {
+      window.setTimeout(function () {
+          resolve(
+              JSON.parse(localStorage.getItem("products")).find(
+                  (product) => product.id === id
+              )
+          );
+      }, 1000);
+  });
+
+
+
+const API = {
+ 
+  fetchAll,
+  getById,
+  update,
+};
+export default API;
+
+// export default {
+//     fetchAll,
+//     getById,
+//     update
+// };
+
 // const fetchAll = () =>
 //   new Promise((resolve) => {
 //     window.setTimeout(function () {
@@ -115,7 +163,7 @@ const products = [
 //       resolve(goods.find((good) => good.id === id));
 //     }, 1000);
 //   });
-export default products
+// export default products;
 
 // const goods = [
 //   { id: 1, name: "Product 1", price: 10 },

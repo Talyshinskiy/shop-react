@@ -10,11 +10,6 @@ const NavBar = () => {
         </Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link " aria-current="page" to="/productPage">
-          Product
-        </Link>
-      </li>
-      <li className="nav-item">
         <Link className="nav-link " aria-current="page" to="/login">
           Login
         </Link>
@@ -25,8 +20,8 @@ const NavBar = () => {
         </Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link " aria-current="page" to="/catalogPage">
-          Catalog
+        <Link className="nav-link " aria-current="page" to="/products">
+          Catalog (products)
         </Link>
       </li>
       <li className="nav-item">
@@ -39,6 +34,17 @@ const NavBar = () => {
           Edit product
         </Link>
       </li>
+      <li className="nav-item">
+        <Link className="nav-link " aria-current="page" to="/contacts">
+          Contacts
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link " aria-current="page" to="/about">
+          About
+        </Link>
+      </li>
+      
     </ul>
   );
 };
