@@ -26,10 +26,7 @@ const App = () => {
         <Route path="/editProductPage" component={EditProductPage} />
         <Route path="/addProductPage" component={AddProductPage} />
         <Route path="/about" component={About} />
-
-        
         <Route path="/" exact componennt={MainPage} />
-
         <Redirect to="/" component={Page404} />
       </Switch>
     </div>

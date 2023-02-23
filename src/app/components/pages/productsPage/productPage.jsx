@@ -4,7 +4,6 @@ import api from "../../../api";
 import { useHistory } from "react-router-dom";
 import ProductCard from "./productCard";
 import Preloader from "../../preloader/preloader";
-import { Link } from "react-router-dom";
 
 const ProductPage = ({ productId }) => {
   const history = useHistory();
@@ -22,7 +21,6 @@ const ProductPage = ({ productId }) => {
     return (
       <div>
         <h1>Product Page</h1>
-        <Link to={`/product/${product.id}`}>Ссылка</Link>
         <ProductCard product={product} />
 
         <button onClick={handleClick}> Изменить</button>
